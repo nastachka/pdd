@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="PDD.Views.PointsmanPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Left"
+                           Margin="10,20,10,20"
+                           TextWrapping="Wrap"
+                           Text="Регулировщик"
+                           FontSize="30"
+                           VerticalAlignment="Top" Name="PointsmanTitle" />
+
+                <StackPanel Name="PointsmanPanel" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

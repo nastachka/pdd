@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="PDD.Views.SearchPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Left"
+                           Margin="10,20,10,0"
+                           TextWrapping="Wrap"
+                           Text="Поиск"
+                           FontSize="30"
+                           VerticalAlignment="Top" Name="SearchTitle" />
+
+                <TextBox Margin="10,20,10,0"
+                         Foreground="Black"
+                         FontSize="28"
+                         Name="SearchTextBox"
+                         Height="45"
+                         Background="White"
+                         KeyDown="SearchEnterKeyDown"
+                         VerticalAlignment="Center"
+                         InputScope="Search" />
+
+                <ProgressRing
+                    Margin="0 40 0 0"
+                    IsActive="True"
+                    Visibility="Collapsed"
+                    Name="Preloader" />
+
+                <TextBlock
+                    Text="Ничего не найдено"
+                    Visibility="Collapsed"
+                    Name="NothingFound"
+                    FontSize="24"
+                    Margin="10 30 10 0" />
+
+                <Pivot Name="SearchResults" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

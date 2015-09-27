@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEAEC160-F296-4A1E-8EE6-8D9D6BD64145}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PDD</RootNamespace>
+    <AssemblyName>PDD</AssemblyName>
+    <DefaultLanguage>ru-ru</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+    <NuGetPackageImportStamp>ea3d2ca4</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Models\BaseGroup.cs" />
+    <Compile Include="Models\BaseSign.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Malfunction.cs" />
+    <Compile Include="Models\MalfunctionGroup.cs" />
+    <Compile Include="Models\Marking.cs" />
+    <Compile Include="Models\MarkingGroup.cs" />
+    <Compile Include="Models\Picture.cs" />
+    <Compile Include="Models\Pointsman.cs" />
+    <Compile Include="Models\SearchBlock.cs" />
+    <Compile Include="Models\SignGroup.cs" />
+    <Compile Include="Models\TrafficLight.cs" />
+    <Compile Include="Models\TrafficLightGroup.cs" />
+    <Compile Include="Views\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactsPage.xaml.cs">
+      <DependentUpon>ContactsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuStructure.cs" />
+    <Compile Include="Views\ErrorPage.xaml.cs">
+      <DependentUpon>ErrorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ReadDataHelper.cs" />
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MalfunctionPage.xaml.cs">
+      <DependentUpon>MalfunctionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MarkingsPage.xaml.cs">
+      <DependentUpon>MarkingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Law.cs" />
+    <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Models\Penalty.cs" />
+    <Compile Include="Models\PenaltyArticle.cs" />
+    <Compile Include="Models\PenaltyGroup.cs" />
+    <Compile Include="Models\Phone.cs" />
+    <Compile Include="Models\Rule.cs" />
+    <Compile Include="Models\RuleGroup.cs" />
+    <Compile Include="Models\SearchLinkParam.cs" />
+    <Compile Include="Models\SearchResult.cs" />
+    <Compile Include="Models\Sign.cs" />
+    <Compile Include="Models\TestAnswer.cs" />
+    <Compile Include="Models\TestQuestion.cs" />
+    <Compile Include="Models\Text.cs" />
+    <Compile Include="Views\PenaltyPage.xaml.cs">
+      <DependentUpon>PenaltyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointsmanPage.xaml.cs">
+      <DependentUpon>PointsmanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\RuleChapterPage.xaml.cs">
+      <DependentUpon>RuleChapterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RulesPage.xaml.cs">
+      <DependentUpon>RulesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignsPage.xaml.cs">
+      <DependentUpon>SignsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="Views\TestResultPage.xaml.cs">
+      <DependentUpon>TestResultPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestsPage.xaml.cs">
+      <DependentUpon>TestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestStartPage.xaml.cs">
+      <DependentUpon>TestStartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrafficLightsPage.xaml.cs">
+      <DependentUpon>TrafficLightsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\LayoutObjectFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icons\crash.png" />
+    <Content Include="Assets\Icons\fuel.png" />
+    <Content Include="Assets\Icons\handshake.png" />
+    <Content Include="Assets\Icons\magnifier12.png" />
+    <Content Include="Assets\Icons\magnifier24.png" />
+    <Content Include="Assets\Icons\removeAds.png" />
+    <Content Include="Assets\Icons\search.png" />
+    <Content Include="Assets\Logo.scale-240.png" />
+    <Content Include="Assets\Markings\m_h_1_01.png" />
+    <Content Include="Assets\Markings\m_h_1_02.png" />
+    <Content Include="Assets\Markings\m_h_1_03.png" />
+    <Content Include="Assets\Markings\m_h_1_04.png" />
+    <Content Include="Assets\Markings\m_h_1_05.png" />
+    <Content Include="Assets\Markings\m_h_1_06.png" />
+    <Content Include="Assets\Markings\m_h_1_07.png" />
+    <Content Include="Assets\Markings\m_h_1_08.png" />
+    <Content Include="Assets\Markings\m_h_1_09.png" />
+    <Content Include="Assets\Markings\m_h_1_10.png" />
+    <Content Include="Assets\Markings\m_h_1_11.png" />
+    <Content Include="Assets\Markings\m_h_1_12.png" />
+    <Content Include="Assets\Markings\m_h_1_13.png" />
+    <Content Include="Assets\Markings\m_h_1_14_01.png" />
+    <Content Include="Assets\Markings\m_h_1_14_02.png" />
+    <Content Include="Assets\Markings\m_h_1_14_03.png" />
+    <Content Include="Assets\Markings\m_h_1_15.png" />
+    <Content Include="Assets\Markings\m_h_1_16_01.png" />
+    <Content Include="Assets\Markings\m_h_1_16_02.png" />
+    <Content Include="Assets\Markings\m_h_1_16_03.png" />
+    <Content Include="Assets\Markings\m_h_1_17_01.png" />
+    <Content Include="Assets\Markings\m_h_1_17_02.png" />
+    <Content Include="Assets\Markings\m_h_1_18_01.png" />
+    <Content Include="Assets\Markings\m_h_1_18_02.png" />
+    <Content Include="Assets\Markings\m_h_1_18_03.png" />
+    <Content Include="Assets\Markings\m_h_1_18_04.png" />
+    <Content Include="Assets\Markings\m_h_1_18_05.png" />
+    <Content Include="Assets\Markings\m_h_1_18_06.png" />
+    <Content Include="Assets\Markings\m_h_1_18_07.png" />
+    <Content Include="Assets\Markings\m_h_1_18_08.png" />
+    <Content Include="Assets\Markings\m_h_1_18_09.png" />
+    <Content Include="Assets\Markings\m_h_1_18_10.png" />
+    <Content Include="Assets\Markings\m_h_1_18_11.png" />
+    <Content Include="Assets\Markings\m_h_1_18_12.png" />
+    <Content Include="Assets\Markings\m_h_1_19.png" />
+    <Content Include="Assets\Markings\m_h_1_20.png" />
+    <Content Include="Assets\Markings\m_h_1_21.png" />
+    <Content Include="Assets\Markings\m_h_1_22.png" />
+    <Content Include="Assets\Markings\m_h_1_23.png" />
+    <Content Include="Assets\Markings\m_h_1_24_01.png" />
+    <Content Include="Assets\Markings\m_h_1_24_02.png" />
+    <Content Include="Assets\Markings\m_h_1_24_03.png" />
+    <Content Include="Assets\Markings\m_h_1_25.png" />
+    <Content Include="Assets\Markings\m_h_1_26.png" />
+    <Content Include="Assets\Markings\m_h_1_27.png" />
+    <Content Include="Assets\Markings\m_h_1_28.png" />
+    <Content Include="Assets\Markings\m_h_1_29.png" />
+    <Content Include="Assets\Markings\m_h_1_30.png" />
+    <Content Include="Assets\Markings\m_h_1_31.png" />
+    <Content Include="Assets\Markings\m_h_1_32.png" />
+    <Content Include="Assets\Markings\m_h_1_33.png" />
+    <Content Include="Assets\Markings\m_h_1_34.png" />
+    <Content Include="Assets\Markings\m_v_10.png" />
+    <Content Include="Assets\Markings\m_v_11.png" />
+    <Content Include="Assets\Markings\m_v_12.png" />
+    <Content Include="Assets\Markings\m_v_13.png" />
+    <Content Include="Assets\Markings\m_v_14.png" />
+    <Content Include="Assets\Markings\m_v_15.png" />
+    <Content Include="Assets\Markings\m_v_16.png" />
+    <Content Include="Assets\Markings\m_v_17.png" />
+    <Content Include="Assets\Markings\m_v_18.png" />
+    <Content Include="Assets\Markings\m_v_18_01.png" />
+    <Content Include="Assets\Markings\m_v_18_02.png" />
+    <Content Include="Assets\Markings\m_v_18_03.png" />
+    <Content Include="Assets\Markings\m_v_18_04.png" />
+    <Content Include="Assets\Menu\tests.png" />
+    <Content Include="Assets\Menu\rules.png" />
+    <Content Include="Assets\Menu\signs.png" />
+    <Content Include="Assets\Menu\road.png" />
+    <Content Include="Assets\Menu\traffic_lights.png" />
+    <Content Include="Assets\Menu\malefunctions.png" />
+    <Content Include="Assets\Menu\police.png" />
+    <Content Include="Assets\Menu\penalties.png" />
+    <Content Include="Assets\Menu\contacts.png" />
+    <Content Include="Assets\Pointsman\r-1.png" />
+    <Content Include="Assets\Pointsman\r-2.png" />
+    <Content Include="Assets\Pointsman\r-3.png" />
+    <Content Include="Assets\Signs\s_1_01.png" />
+    <Content Include="Assets\Signs\s_1_02.png" />
+    <Content Include="Assets\Signs\s_1_03_01.png" />
+    <Content Include="Assets\Signs\s_1_03_02.png" />
+    <Content Include="Assets\Signs\s_1_04_01.png" />
+    <Content Include="Assets\Signs\s_1_04_02.png" />
+    <Content Include="Assets\Signs\s_1_05.png" />
+    <Content Include="Assets\Signs\s_1_06.png" />
+    <Content Include="Assets\Signs\s_1_07.png" />
+    <Content Include="Assets\Signs\s_1_08.png" />
+    <Content Include="Assets\Signs\s_1_09.png" />
+    <Content Include="Assets\Signs\s_1_10.png" />
+    <Content Include="Assets\Signs\s_1_11_01.png" />
+    <Content Include="Assets\Signs\s_1_11_02.png" />
+    <Content Include="Assets\Signs\s_1_12_01.png" />
+    <Content Include="Assets\Signs\s_1_12_02.png" />
+    <Content Include="Assets\Signs\s_1_13.png" />
+    <Content Include="Assets\Signs\s_1_14.png" />
+    <Content Include="Assets\Signs\s_1_15.png" />
+    <Content Include="Assets\Signs\s_1_16_01.png" />
+    <Content Include="Assets\Signs\s_1_16_02.png" />
+    <Content Include="Assets\Signs\s_1_16_03.png" />
+    <Content Include="Assets\Signs\s_1_16_04.png" />
+    <Content Include="Assets\Signs\s_1_17.png" />
+    <Content Include="Assets\Signs\s_1_18_01.png" />
+    <Content Include="Assets\Signs\s_1_18_02.png" />
+    <Content Include="Assets\Signs\s_1_18_03.png" />
+    <Content Include="Assets\Signs\s_1_18_04.png" />
+    <Content Include="Assets\Signs\s_1_18_05.png" />
+    <Content Include="Assets\Signs\s_1_18_06.png" />
+    <Content Include="Assets\Signs\s_1_19_01.png" />
+    <Content Include="Assets\Signs\s_1_19_02.png" />
+    <Content Include="Assets\Signs\s_1_20.png" />
+    <Content Include="Assets\Signs\s_1_21.png" />
+    <Content Include="Assets\Signs\s_1_22.png" />
+    <Content Include="Assets\Signs\s_1_23.png" />
+    <Content Include="Assets\Signs\s_1_24.png" />
+    <Content Include="Assets\Signs\s_1_25.png" />
+    <Content Include="Assets\Signs\s_1_26.png" />
+    <Content Include="Assets\Signs\s_1_27.png" />
+    <Content Include="Assets\Signs\s_1_28.png" />
+    <Content Include="Assets\Signs\s_1_29.png" />
+    <Content Include="Assets\Signs\s_1_30.png" />
+    <Content Include="Assets\Signs\s_1_31_01.png" />
+    <Content Include="Assets\Signs\s_1_31_02.png" />
+    <Content Include="Assets\Signs\s_1_31_03.png" />
+    <Content Include="Assets\Signs\s_1_31_04.png" />
+    <Content Include="Assets\Signs\s_1_31_05.png" />
+    <Content Include="Assets\Signs\s_1_32.png" />
+    <Content Include="Assets\Signs\s_1_33.png" />
+    <Content Include="Assets\Signs\s_1_34.png" />
+    <Content Include="Assets\Signs\s_1_35.png" />
+    <Content Include="Assets\Signs\s_2_01.png" />
+    <Content Include="Assets\Signs\s_2_02.png" />
+    <Content Include="Assets\Signs\s_2_03_01.png" />
+    <Content Include="Assets\Signs\s_2_03_02.png" />
+    <Content Include="Assets\Signs\s_2_03_03.png" />
+    <Content Include="Assets\Signs\s_2_03_04.png" />
+    <Content Include="Assets\Signs\s_2_04.png" />
+    <Content Include="Assets\Signs\s_2_05.png" />
+    <Content Include="Assets\Signs\s_2_06_01.png" />
+    <Content Include="Assets\Signs\s_2_06_02.png" />
+    <Content Include="Assets\Signs\s_2_07.png" />
+    <Content Include="Assets\Signs\s_3_01.png" />
+    <Content Include="Assets\Signs\s_3_02.png" />
+    <Content Include="Assets\Signs\s_3_03.png" />
+    <Content Include="Assets\Signs\s_3_04.png" />
+    <Content Include="Assets\Signs\s_3_05.png" />
+    <Content Include="Assets\Signs\s_3_06.png" />
+    <Content Include="Assets\Signs\s_3_07.png" />
+    <Content Include="Assets\Signs\s_3_08.png" />
+    <Content Include="Assets\Signs\s_3_09.png" />
+    <Content Include="Assets\Signs\s_3_10.png" />
+    <Content Include="Assets\Signs\s_3_11_01.png" />
+    <Content Include="Assets\Signs\s_3_11_02.png" />
+    <Content Include="Assets\Signs\s_3_12_01.png" />
+    <Content Include="Assets\Signs\s_3_12_02.png" />
+    <Content Include="Assets\Signs\s_3_13.png" />
+    <Content Include="Assets\Signs\s_3_14.png" />
+    <Content Include="Assets\Signs\s_3_15_01.png" />
+    <Content Include="Assets\Signs\s_3_15_02.png" />
+    <Content Include="Assets\Signs\s_3_16.png" />
+    <Content Include="Assets\Signs\s_3_17_01.png" />
+    <Content Include="Assets\Signs\s_3_17_02.png" />
+    <Content Include="Assets\Signs\s_3_18_01.png" />
+    <Content Include="Assets\Signs\s_3_18_02.png" />
+    <Content Include="Assets\Signs\s_3_19.png" />
+    <Content Include="Assets\Signs\s_3_20_01.png" />
+    <Content Include="Assets\Signs\s_3_20_02.png" />
+    <Content Include="Assets\Signs\s_3_20_03.png" />
+    <Content Include="Assets\Signs\s_3_21_01.png" />
+    <Content Include="Assets\Signs\s_3_21_02.png" />
+    <Content Include="Assets\Signs\s_3_22.png" />
+    <Content Include="Assets\Signs\s_3_23.png" />
+    <Content Include="Assets\Signs\s_3_24_01.png" />
+    <Content Include="Assets\Signs\s_3_24_02.png" />
+    <Content Include="Assets\Signs\s_3_25_01.png" />
+    <Content Include="Assets\Signs\s_3_25_02.png" />
+    <Content Include="Assets\Signs\s_3_26.png" />
+    <Content Include="Assets\Signs\s_3_27.png" />
+    <Content Include="Assets\Signs\s_3_28.png" />
+    <Content Include="Assets\Signs\s_3_29.png" />
+    <Content Include="Assets\Signs\s_3_30.png" />
+    <Content Include="Assets\Signs\s_3_31.png" />
+    <Content Include="Assets\Signs\s_3_32.png" />
+    <Content Include="Assets\Signs\s_4_01_01.png" />
+    <Content Include="Assets\Signs\s_4_01_02.png" />
+    <Content Include="Assets\Signs\s_4_01_03.png" />
+    <Content Include="Assets\Signs\s_4_01_04.png" />
+    <Content Include="Assets\Signs\s_4_01_05.png" />
+    <Content Include="Assets\Signs\s_4_01_06.png" />
+    <Content Include="Assets\Signs\s_4_02_01.png" />
+    <Content Include="Assets\Signs\s_4_02_02.png" />
+    <Content Include="Assets\Signs\s_4_02_03.png" />
+    <Content Include="Assets\Signs\s_4_03.png" />
+    <Content Include="Assets\Signs\s_4_04.png" />
+    <Content Include="Assets\Signs\s_4_05_01.png" />
+    <Content Include="Assets\Signs\s_4_05_02.png" />
+    <Content Include="Assets\Signs\s_4_06_01.png" />
+    <Content Include="Assets\Signs\s_4_06_02.png" />
+    <Content Include="Assets\Signs\s_4_07.png" />
+    <Content Include="Assets\Signs\s_4_08.png" />
+    <Content Include="Assets\Signs\s_4_09_01.png" />
+    <Content Include="Assets\Signs\s_4_09_02.png" />
+    <Content Include="Assets\Signs\s_4_09_03.png" />
+    <Content Include="Assets\Signs\s_4_10_01.png" />
+    <Content Include="Assets\Signs\s_4_10_02.png" />
+    <Content Include="Assets\Signs\s_5_01.png" />
+    <Content Include="Assets\Signs\s_5_02.png" />
+    <Content Include="Assets\Signs\s_5_03.png" />
+    <Content Include="Assets\Signs\s_5_04.png" />
+    <Content Include="Assets\Signs\s_5_05.png" />
+    <Content Include="Assets\Signs\s_5_06.png" />
+    <Content Include="Assets\Signs\s_5_07_01.png" />
+    <Content Include="Assets\Signs\s_5_07_02.png" />
+    <Content Include="Assets\Signs\s_5_08_01.png" />
+    <Content Include="Assets\Signs\s_5_08_02_01.png" />
+    <Content Include="Assets\Signs\s_5_08_02_02.png" />
+    <Content Include="Assets\Signs\s_5_08_02_03.png" />
+    <Content Include="Assets\Signs\s_5_08_02_04.png" />
+    <Content Include="Assets\Signs\s_5_08_03_01.png" />
+    <Content Include="Assets\Signs\s_5_08_03_02.png" />
+    <Content Include="Assets\Signs\s_5_08_04.png" />
+    <Content Include="Assets\Signs\s_5_08_05.png" />
+    <Content Include="Assets\Signs\s_5_08_06.png" />
+    <Content Include="Assets\Signs\s_5_08_07.png" />
+    <Content Include="Assets\Signs\s_5_08_08.png" />
+    <Content Include="Assets\Signs\s_5_08_09.png" />
+    <Content Include="Assets\Signs\s_5_09_01.png" />
+    <Content Include="Assets\Signs\s_5_09_02.png" />
+    <Content Include="Assets\Signs\s_5_10_01.png" />
+    <Content Include="Assets\Signs\s_5_10_02.png" />
+    <Content Include="Assets\Signs\s_5_10_03.png" />
+    <Content Include="Assets\Signs\s_5_10_04.png" />
+    <Content Include="Assets\Signs\s_5_11_01.png" />
+    <Content Include="Assets\Signs\s_5_11_02.png" />
+    <Content Include="Assets\Signs\s_5_12_01.png" />
+    <Content Include="Assets\Signs\s_5_12_02.png" />
+    <Content Include="Assets\Signs\s_5_13_01.png" />
+    <Content Include="Assets\Signs\s_5_13_02.png" />
+    <Content Include="Assets\Signs\s_5_14_01.png" />
+    <Content Include="Assets\Signs\s_5_14_02.png" />
+    <Content Include="Assets\Signs\s_5_15.png" />
+    <Content Include="Assets\Signs\s_5_16_01.png" />
+    <Content Include="Assets\Signs\s_5_16_02.png" />
+    <Content Include="Assets\Signs\s_5_17_01.png" />
+    <Content Include="Assets\Signs\s_5_17_02.png" />
+    <Content Include="Assets\Signs\s_5_17_03.png" />
+    <Content Include="Assets\Signs\s_5_17_04.png" />
+    <Content Include="Assets\Signs\s_5_18_01.png" />
+    <Content Include="Assets\Signs\s_5_18_02.png" />
+    <Content Include="Assets\Signs\s_5_19_01.png" />
+    <Content Include="Assets\Signs\s_5_19_02.png" />
+    <Content Include="Assets\Signs\s_5_19_03.png" />
+    <Content Include="Assets\Signs\s_5_20_01_02_01.png" />
+    <Content Include="Assets\Signs\s_5_20_01_02_02.png" />
+    <Content Include="Assets\Signs\s_5_20_01_02_03.png" />
+    <Content Include="Assets\Signs\s_5_20_01_02_04.png" />
+    <Content Include="Assets\Signs\s_5_20_01_02_05.png" />
+    <Content Include="Assets\Signs\s_5_20_01_02_06.png" />
+    <Content Include="Assets\Signs\s_5_20_03.png" />
+    <Content Include="Assets\Signs\s_5_21_01.png" />
+    <Content Include="Assets\Signs\s_5_21_01_01.png" />
+    <Content Include="Assets\Signs\s_5_21_01_02.png" />
+    <Content Include="Assets\Signs\s_5_21_01_03.png" />
+    <Content Include="Assets\Signs\s_5_21_02.png" />
+    <Content Include="Assets\Signs\s_5_22_01.png" />
+    <Content Include="Assets\Signs\s_5_22_02.png" />
+    <Content Include="Assets\Signs\s_5_23_01.png" />
+    <Content Include="Assets\Signs\s_5_23_02.png" />
+    <Content Include="Assets\Signs\s_5_24.png" />
+    <Content Include="Assets\Signs\s_5_25.png" />
+    <Content Include="Assets\Signs\s_5_26_01.png" />
+    <Content Include="Assets\Signs\s_5_26_02.png" />
+    <Content Include="Assets\Signs\s_5_27.png" />
+    <Content Include="Assets\Signs\s_5_28.png" />
+    <Content Include="Assets\Signs\s_5_29_01_01.png" />
+    <Content Include="Assets\Signs\s_5_29_01_02.png" />
+    <Content Include="Assets\Signs\s_5_29_01_03.png" />
+    <Content Include="Assets\Signs\s_5_29_01_04.png" />
+    <Content Include="Assets\Signs\s_5_29_02.png" />
+    <Content Include="Assets\Signs\s_5_29_03_01.png" />
+    <Content Include="Assets\Signs\s_5_29_03_02.png" />
+    <Content Include="Assets\Signs\s_5_29_03_03.png" />
+    <Content Include="Assets\Signs\s_5_30_01.png" />
+    <Content Include="Assets\Signs\s_5_30_02.png" />
+    <Content Include="Assets\Signs\s_5_30_03.png" />
+    <Content Include="Assets\Signs\s_5_31.png" />
+    <Content Include="Assets\Signs\s_5_32_01.png" />
+    <Content Include="Assets\Signs\s_5_32_02.png" />
+    <Content Include="Assets\Signs\s_5_32_03.png" />
+    <Content Include="Assets\Signs\s_5_33.png" />
+    <Content Include="Assets\Signs\s_5_34_01.png" />
+    <Content Include="Assets\Signs\s_5_34_02.png" />
+    <Content Include="Assets\Signs\s_5_35.png" />
+    <Content Include="Assets\Signs\s_5_36.png" />
+    <Content Include="Assets\Signs\s_5_37.png" />
+    <Content Include="Assets\Signs\s_5_38.png" />
+    <Content Include="Assets\Signs\s_5_39.png" />
+    <Content Include="Assets\Signs\s_5_40.png" />
+    <Content Include="Assets\Signs\s_5_41.png" />
+    <Content Include="Assets\Signs\s_5_42.png" />
+    <Content Include="Assets\Signs\s_5_43.png" />
+    <Content Include="Assets\Signs\s_6_01.png" />
+    <Content Include="Assets\Signs\s_6_02.png" />
+    <Content Include="Assets\Signs\s_6_03_01.png" />
+    <Content Include="Assets\Signs\s_6_03_02.png" />
+    <Content Include="Assets\Signs\s_6_03_03.png" />
+    <Content Include="Assets\Signs\s_6_04.png" />
+    <Content Include="Assets\Signs\s_6_05.png" />
+    <Content Include="Assets\Signs\s_6_06.png" />
+    <Content Include="Assets\Signs\s_6_07.png" />
+    <Content Include="Assets\Signs\s_6_08.png" />
+    <Content Include="Assets\Signs\s_6_09.png" />
+    <Content Include="Assets\Signs\s_6_10.png" />
+    <Content Include="Assets\Signs\s_6_11.png" />
+    <Content Include="Assets\Signs\s_6_12.png" />
+    <Content Include="Assets\Signs\s_6_12_01.png" />
+    <Content Include="Assets\Signs\s_6_12_02.png" />
+    <Content Include="Assets\Signs\s_6_13.png" />
+    <Content Include="Assets\Signs\s_6_14.png" />
+    <Content Include="Assets\Signs\s_6_15.png" />
+    <Content Include="Assets\Signs\s_7_01_01.png" />
+    <Content Include="Assets\Signs\s_7_01_02.png" />
+    <Content Include="Assets\Signs\s_7_01_03.png" />
+    <Content Include="Assets\Signs\s_7_01_04.png" />
+    <Content Include="Assets\Signs\s_7_02_01.png" />
+    <Content Include="Assets\Signs\s_7_02_02.png" />
+    <Content Include="Assets\Signs\s_7_02_03.png" />
+    <Content Include="Assets\Signs\s_7_02_04.png" />
+    <Content Include="Assets\Signs\s_7_02_05.png" />
+    <Content Include="Assets\Signs\s_7_02_06.png" />
+    <Content Include="Assets\Signs\s_7_03_01.png" />
+    <Content Include="Assets\Signs\s_7_03_02.png" />
+    <Content Include="Assets\Signs\s_7_03_03.png" />
+    <Content Include="Assets\Signs\s_7_04_01.png" />
+    <Content Include="Assets\Signs\s_7_04_02.png" />
+    <Content Include="Assets\Signs\s_7_04_03.png" />
+    <Content Include="Assets\Signs\s_7_04_04.png" />
+    <Content Include="Assets\Signs\s_7_04_05.png" />
+    <Content Include="Assets\Signs\s_7_04_06.png" />
+    <Content Include="Assets\Signs\s_7_04_07.png" />
+    <Content Include="Assets\Signs\s_7_04_08.png" />
+    <Content Include="Assets\Signs\s_7_05_01.png" />
+    <Content Include="Assets\Signs\s_7_05_02.png" />
+    <Content Include="Assets\Signs\s_7_05_03.png" />
+    <Content Include="Assets\Signs\s_7_05_04.png" />
+    <Content Include="Assets\Signs\s_7_05_05.png" />
+    <Content Include="Assets\Signs\s_7_05_06.png" />
+    <Content Include="Assets\Signs\s_7_05_07.png" />
+    <Content Include="Assets\Signs\s_7_06_01.png" />
+    <Content Include="Assets\Signs\s_7_06_02.png" />
+    <Content Include="Assets\Signs\s_7_06_03.png" />
+    <Content Include="Assets\Signs\s_7_06_04.png" />
+    <Content Include="Assets\Signs\s_7_06_05.png" />
+    <Content Include="Assets\Signs\s_7_06_06.png" />
+    <Content Include="Assets\Signs\s_7_06_07.png" />
+    <Content Include="Assets\Signs\s_7_06_08.png" />
+    <Content Include="Assets\Signs\s_7_06_09.png" />
+    <Content Include="Assets\Signs\s_7_06_10.png" />
+    <Content Include="Assets\Signs\s_7_06_11.png" />
+    <Content Include="Assets\Signs\s_7_06_12.png" />
+    <Content Include="Assets\Signs\s_7_06_13.png" />
+    <Content Include="Assets\Signs\s_7_06_14.png" />
+    <Content Include="Assets\Signs\s_7_06_15.png" />
+    <Content Include="Assets\Signs\s_7_06_16.png" />
+    <Content Include="Assets\Signs\s_7_06_17.png" />
+    <Content Include="Assets\Signs\s_7_06_18.png" />
+    <Content Include="Assets\Signs\s_7_07.png" />
+    <Content Include="Assets\Signs\s_7_08.png" />
+    <Content Include="Assets\Signs\s_7_09.png" />
+    <Content Include="Assets\Signs\s_7_10.png" />
+    <Content Include="Assets\Signs\s_7_11.png" />
+    <Content Include="Assets\Signs\s_7_12.png" />
+    <Content Include="Assets\Signs\s_7_13.png" />
+    <Content Include="Assets\Signs\s_7_14.png" />
+    <Content Include="Assets\Signs\s_7_15.png" />
+    <Content Include="Assets\Signs\s_7_16.png" />
+    <Content Include="Assets\Signs\s_7_17.png" />
+    <Content Include="Assets\Signs\s_7_18.png" />
+    <Content Include="Assets\Signs\s_7_19.png" />
+    <Content Include="Assets\Signs\s_7_20.png" />
+    <Content Include="Assets\Signs\s_7_21.png" />
+    <Content Include="Assets\Signs\s_7_22.png" />
+    <Content Include="Assets\Signs\s_7_22_01.png" />
+    <Content Include="Assets\Signs\s_7_22_02.png" />
+    <Content Include="Assets\Signs\s_7_22_03.png" />
+    <Content Include="Assets\Signs\s_7_22_04.png" />
+    <Content Include="Assets\Signs\s_7_23.png" />
+    <Content Include="Assets\SmallLogo.scale-240.png" />
+    <Content Include="Assets\SplashScreen.scale-240.png" />
+    <Content Include="Assets\Square71x71Logo.scale-240.png" />
+    <Content Include="Assets\StoreLogo.scale-240.png" />
+    <Content Include="Assets\Tests\000.png" />
+    <Content Include="Assets\Tests\002.png" />
+    <Content Include="Assets\Tests\003.png" />
+    <Content Include="Assets\Tests\004.png" />
+    <Content Include="Assets\Tests\005.png" />
+    <Content Include="Assets\Tests\006.png" />
+    <Content Include="Assets\Tests\007.png" />
+    <Content Include="Assets\Tests\008.png" />
+    <Content Include="Assets\Tests\009.png" />
+    <Content Include="Assets\Tests\010.png" />
+    <Content Include="Assets\Tests\011.png" />
+    <Content Include="Assets\Tests\012.png" />
+    <Content Include="Assets\Tests\015.png" />
+    <Content Include="Assets\Tests\016.png" />
+    <Content Include="Assets\TrafficLights\tl_01.png" />
+    <Content Include="Assets\TrafficLights\tl_02.png" />
+    <Content Include="Assets\TrafficLights\tl_03.png" />
+    <Content Include="Assets\TrafficLights\tl_04.png" />
+    <Content Include="Assets\TrafficLights\tl_05.png" />
+    <Content Include="Assets\TrafficLights\tl_06.png" />
+    <Content Include="Assets\TrafficLights\tl_07.png" />
+    <Content Include="Assets\TrafficLights\tl_08.png" />
+    <Content Include="Assets\TrafficLights\tl_09.png" />
+    <Content Include="Assets\TrafficLights\tl_10.png" />
+    <Content Include="Assets\TrafficLights\tl_11.png" />
+    <Content Include="Assets\TrafficLights\tl_12.png" />
+    <Content Include="Assets\TrafficLights\tl_13.png" />
+    <Content Include="Assets\TrafficLights\tl_14.png" />
+    <Content Include="Assets\TrafficLights\tl_15.png" />
+    <Content Include="Assets\TrafficLights\tl_16.png" />
+    <Content Include="Assets\TransportMarkings\s_v_01.png" />
+    <Content Include="Assets\TransportMarkings\s_v_02.png" />
+    <Content Include="Assets\TransportMarkings\s_v_03.png" />
+    <Content Include="Assets\TransportMarkings\s_v_04.png" />
+    <Content Include="Assets\TransportMarkings\s_v_05.png" />
+    <Content Include="Assets\TransportMarkings\s_v_06.png" />
+    <Content Include="Assets\TransportMarkings\s_v_07.png" />
+    <Content Include="Assets\TransportMarkings\s_v_08.png" />
+    <Content Include="Assets\TransportMarkings\s_v_09.png" />
+    <Content Include="Assets\TransportMarkings\s_v_10.png" />
+    <Content Include="Assets\TransportMarkings\s_v_11.png" />
+    <Content Include="Assets\TransportMarkings\s_v_12.png" />
+    <Content Include="Assets\TransportMarkings\s_v_13.png" />
+    <Content Include="Assets\TransportMarkings\s_v_14.png" />
+    <Content Include="Assets\TransportMarkings\s_v_15.png" />
+    <Content Include="Assets\TransportMarkings\s_v_16.png" />
+    <Content Include="Assets\TransportMarkings\s_v_17.png" />
+    <Content Include="Assets\TransportMarkings\s_v_18.png" />
+    <Content Include="Assets\WideLogo.scale-240.png" />
+    <Content Include="db\pdd.sqlite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Views\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContactsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ErrorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MalfunctionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MarkingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PenaltyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PointsmanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RuleChapterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RulesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestResultPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestStartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TrafficLightsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UniversalWrapPanel">
+      <HintPath>..\packages\UniversalWrapPanel.1.0.0\lib\wpa81\UniversalWrapPanel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WP81, Version=3.8.11.1">
+      <Name>SQLite for Windows Phone 8.1</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetPlatformIdentifier)' == '' ">
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

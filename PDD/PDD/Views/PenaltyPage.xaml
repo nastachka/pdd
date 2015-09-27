@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="PDD.Views.PenaltyPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Pivot Title="Ответственность за нарушение ПДД" Name="PenaltyPivot">
+            <PivotItem Header="Административная">
+                <ScrollViewer VerticalScrollBarVisibility="Visible">
+                    <Grid>
+                        <StackPanel Name="AdministrativePenalty" />
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+            <PivotItem Header="Уголовная">
+                <ScrollViewer VerticalScrollBarVisibility="Visible">
+                    <Grid>
+                        <StackPanel Name="CriminalPenalty" />
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
